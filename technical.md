@@ -69,12 +69,10 @@ WHERE a.status = 'active';
 <img src="img/sql_4_example.png" />
 
 ```sql
-SELECT a.ad_id, e.event_type, count(*) as "count"
-FROM Ads AS a
-  JOIN Events AS e
-      ON a.ad_id = e.ad_id
-GROUP BY a.ad_id, e.event_type
-ORDER BY a.ad_id, "count" DESC;
+SELECT e.ad_id, e.event_type, count(*) as "count"
+From Events AS e
+GROUP BY e.ad_id, e.event_type
+ORDER BY e.ad_id, "count" DESC;
 ```
 
 <br/>
